@@ -6,9 +6,12 @@ pipeline{
                 git branch: 'master', url: 'https://github.com/palwalun/Banking-Application.git'
             }
         }
-        stage('CBuild'){
+        stage('Build'){
             steps{
+               dir('bankwebapp'){
                 sh 'mvn clean package'
+               }
+        
             }
         }
     }
